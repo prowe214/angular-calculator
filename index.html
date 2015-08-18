@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="calculator">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Calculator</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+    <script src='js/app.js'></script>
+  </head>
+  <body ng-controller="CalculatorController">
+    <h1>Angular Calculator</h1>
+    <h2>Use the URL bar to do math!</h2>
+    <p>
+      Example: visit "/#/add/4/10" to get an answer of "14"
+    </p>
+    <p>{{message}}</p>
+    <div ng-view style="border: 1px solid red"></div>
+  </body>
+</html>
