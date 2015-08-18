@@ -1,8 +1,7 @@
 var app = angular.module('calculator', ['ngRoute']);
 
-
 app.controller('CalculatorController', function ($scope, $routeParams) {
-  $scope.message = "ORIGINAL CALC";
+  $scope.message = $routeParams.action;
   $scope.answer = function () {
     if ($routeParams.action === 'add') {
       return parseInt($routeParams.a) + parseInt($routeParams.b);
@@ -27,7 +26,6 @@ app.controller('AdvancedController', function ($scope, $routeParams, $location) 
 });
 
 app.config(function ($routeProvider, $locationProvider) {
-      $locationProvider.html5Mode(true);
   $routeProvider
     .when('/', {
       templateUrl: 'partials/domath.html',
@@ -41,4 +39,5 @@ app.config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/domath.html',
       controller: 'AdvancedController'
     });
+  $locationProvider.html5Mode(true);
 });
